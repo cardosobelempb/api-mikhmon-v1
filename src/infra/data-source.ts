@@ -1,8 +1,8 @@
 // infra/data-source.ts
-import 'reflect-metadata';
-import { DataSource } from 'typeorm';
-import { dbConfig } from '../config/db.config';
-import { User } from '../entities/User';
+import 'reflect-metadata'
+import { DataSource } from 'typeorm'
+import { dbConfig } from '../config/db.config'
+import { User } from '../entities/user'
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -12,5 +12,5 @@ export const AppDataSource = new DataSource({
   password: dbConfig.password,
   database: dbConfig.database,
   entities: [User],
-  synchronize: true // 🔥 em produção use migrations
-});
+  synchronize: true, // 🔥 em produção use migrations
+})

@@ -1,10 +1,10 @@
-import { Router } from 'express';
+import { Router } from 'express'
 
-import { HotspotController } from '../controllers/HotspotController';
+import { HotspotController } from '../controllers/hotspot.controller'
 
-const router = Router();
+const router = Router()
 
-router.post('/hotspot/users', HotspotController.createUser);
-router.get('/hotspot/users', HotspotController.listUsers);
+router.post('/hotspot/users', HotspotController.createUser)
+router.get('/hotspot/users', HotspotController.listUsers)
 
-export default router;
+export default router

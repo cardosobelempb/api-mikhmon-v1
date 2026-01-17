@@ -3,24 +3,25 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryGeneratedColumn
-} from 'typeorm';
-import { Role } from '../types/role';
+  PrimaryGeneratedColumn,
+} from 'typeorm'
+
+import { Role } from '../types/role.types'
 
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id!: string;
+  id!: string
 
   @Column({ unique: true })
-  username!: string;
+  username!: string
 
   @Column()
-  password!: string;
+  password!: string
 
   @Column({ type: 'enum', enum: Role, default: Role.USER })
-  role!: Role;
+  role!: Role
 
   @CreateDateColumn()
-  createdAt!: Date;
+  createdAt!: Date
 }
