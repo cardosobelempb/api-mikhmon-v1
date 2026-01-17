@@ -10,7 +10,10 @@
     "lint": "eslint .",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "npx dotenv-cli -e .env.test vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "pretest:int": "docker run --name testsdb -e POSTGRES_PASSWORD=postgres -p 5433:5432 -d postgres",
+    "test:int": "npx dotenv-cli -e .env.test -- vitest run --config vitest.int.config.ts",
+    "posttest:int": "docker stop testsdb && docker rm testsdb"
   },
   "keywords": [],
   "author": "",
