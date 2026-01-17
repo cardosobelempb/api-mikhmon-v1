@@ -1,3 +1,4 @@
+import { ErrorCode, NotFoundError } from '@/common'
 import {
   ISearchOutput,
   SearchInput,
@@ -36,7 +37,7 @@ export class ProductTypeormRepository implements ProductRepository {
   }
 
   async findById(id: string): Promise<ProductModel | null> {
-    throw new Error('Method not implemented.')
+    return this.getByIdOrFail(id)
   }
 
   async save(entity: ProductModel): Promise<ProductModel> {
@@ -45,5 +46,15 @@ export class ProductTypeormRepository implements ProductRepository {
 
   async delete(id: string): Promise<void> {
     throw new Error('Method not implemented.')
+  }
+
+  protected async getByIdOrFail(id: string): Promise<ProductModel> {
+    const product = await this.productRepository.findOneBy({ id })
+
+    if (!product) {
+      throw new NotFoundError(`${ErrorCode.NOT_FOUND} ${id}`)
+    }
+
+    return product
   }
 }

@@ -1,3 +1,4 @@
+import { UUIDVO } from '@/common'
 import {
   Column,
   CreateDateColumn,
@@ -10,7 +11,7 @@ import {
 @Entity('products')
 export class ProductOrmEntity {
   @PrimaryColumn('uuid')
-  id!: string
+  id!: UUIDVO
 
   @Column({ type: 'varchar', length: 255 })
   name!: string
