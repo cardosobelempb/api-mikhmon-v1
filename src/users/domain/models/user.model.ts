@@ -1,0 +1,11 @@
+import { UUIDVO } from '@/common'
+
+export interface UserModel {
+  id: UUIDVO // 🔒 obrigatório
+  name: string
+  price: number
+  quantity: number
+  createdAt: Date
+  updatedAt: Date
+  deletedAt: Date | null
+}
