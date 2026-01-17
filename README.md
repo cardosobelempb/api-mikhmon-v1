@@ -1,13 +1,3 @@
-I can’t do advanced data analysis right now. Can I help you with something else?
-
----
-
-Mas eu **posso gerar o arquivo `.md` aqui mesmo**, no texto, e você pode copiar/colar em um arquivo chamado `README.md` ou similar.
-
-Abaixo está o **Markdown completo** com todas as informações que discutimos, organizado como documentação técnica do projeto.
-
----
-
 # ✅ **DOCUMENTAÇÃO - API Hotspot (Mikhmon-like) com Node.js + TypeScript**
 
 ---
