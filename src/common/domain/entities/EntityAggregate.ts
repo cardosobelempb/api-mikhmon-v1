@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { EntityDomain } from '.'
 import { EventDomain, EventBuild } from '../events'
+=======
+import { EventBuild, EventDomain } from '../events'
+import { EntityDomain } from './EntityDomain'
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 
 /**
  * EntityAggregate

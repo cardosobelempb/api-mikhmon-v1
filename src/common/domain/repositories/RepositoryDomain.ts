@@ -17,5 +17,9 @@ export abstract class RepositoryDomain<TEntity> {
    *
    * ⚠️ Uso restrito e consciente.
    */
+<<<<<<< HEAD
   abstract delete(entity: TEntity): Promise<void>
+=======
+  abstract delete(id: string): Promise<void>
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 }
