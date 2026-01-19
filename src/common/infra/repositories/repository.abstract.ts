@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Pagination } from './pagination';
+=======
+import { Pagination } from './pagination'
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
 import { Pagination } from './pagination'
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d

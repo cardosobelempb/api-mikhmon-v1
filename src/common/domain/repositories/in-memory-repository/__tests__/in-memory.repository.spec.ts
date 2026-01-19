@@ -3,8 +3,13 @@ import { randomUUID } from 'node:crypto'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { EntityBuild } from '../../../entities/EntityBuild'
 import { NotFoundError } from '../../../errors'
+=======
+import { ErrorCode, NotFoundError } from '../../../errors'
+import { EntityFactory } from '../../EntityFactory'
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
 import { ErrorCode, NotFoundError } from '../../../errors'
 import { EntityFactory } from '../../EntityFactory'
@@ -38,7 +43,11 @@ class StubEntity {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export class StubFactory implements EntityBuild<StubEntity, StubEntityProsp> {
+=======
+export class StubFactory implements EntityFactory<StubEntity, StubEntityProsp> {
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
 export class StubFactory implements EntityFactory<StubEntity, StubEntityProsp> {
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
@@ -55,6 +64,7 @@ class StubInMemoryRepository extends RepositoryInMemory<StubEntity> {
   constructor() {
     super()
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.sortableFields = ['name']
   }
   protected async applyFilter(
@@ -68,6 +78,8 @@ class StubInMemoryRepository extends RepositoryInMemory<StubEntity> {
     return items.filter(
       item => item.name.toLowerCase().includes(filter.toLowerCase()), // exemplo
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     this.sortableFields = ['name'] // whitelist de campos para sort
   }
 
@@ -77,6 +89,9 @@ class StubInMemoryRepository extends RepositoryInMemory<StubEntity> {
 
     return items.filter(item =>
       item.name.toLowerCase().includes(filter.toLowerCase()),
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     )
   }
@@ -139,6 +154,7 @@ describe('InmemoryRepository unit tests', () => {
 
   describe('findById', () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     it('should throw error when id not found', async () => {
       const id = randomUUID()
       await sut['_get'](id).catch(err => {
@@ -154,6 +170,8 @@ describe('InmemoryRepository unit tests', () => {
       expect(result).toBeDefined()
       expect(result).toStrictEqual(data)
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     it('should return null when entity is not found', async () => {
       const id = UUIDVO.generate()
 
@@ -181,6 +199,9 @@ describe('InmemoryRepository unit tests', () => {
         statusCode: 404,
         path: `Entity not found using id ${id}`,
       })
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     })
   })
@@ -215,6 +236,7 @@ describe('InmemoryRepository unit tests', () => {
 
   describe('delete', () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     it('should throw error when id not found', async () => {
       await sut['delete'](entity).catch(err => {
         expect(err).toBeInstanceOf(NotFoundError)
@@ -232,6 +254,8 @@ describe('InmemoryRepository unit tests', () => {
       // expect(sut['items'][0]?.deletedAt).toEqual(expect.any(Date))
       // expect(sut['items'][0]).toStrictEqual(data)
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     it('should throw NotFoundError when entity does not exist', async () => {
       const id = UUIDVO.generate()
 
@@ -248,6 +272,9 @@ describe('InmemoryRepository unit tests', () => {
 
       // const result = await sut.findById(savedEntity.id.getValue())
       // expect(result).toBeNull()
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     })
   })
@@ -340,7 +367,11 @@ describe('InmemoryRepository unit tests', () => {
       ]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       let result = sut['applySort'](items)
+=======
+      let result = sut['applySort'](items, null, 'desc')
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
       let result = sut['applySort'](items, null, 'desc')
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d

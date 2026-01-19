@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { RepositoryDomain } from './RepositoryDomain'
 import { SearchInput, SearchOutput } from './RespositorySearch'
 
@@ -8,6 +9,8 @@ import { SearchInput, SearchOutput } from './RespositorySearch'
 export abstract class RepositorySearchable<
   TEntity,
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 import { ISearchOutput, SearchInput } from './IRespositorySearch'
 import { RepositoryDomain } from './RepositoryDomain'
 
@@ -22,6 +25,9 @@ export type StringKeyOf<T> = Extract<keyof T, string>
 export abstract class RepositorySearchable<
   TEntity,
   TSortBy extends string = StringKeyOf<TEntity>,
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 > extends RepositoryDomain<TEntity> {
   /**
@@ -30,7 +36,13 @@ export abstract class RepositorySearchable<
    * @param params Parâmetros de busca
    */
 <<<<<<< HEAD
+<<<<<<< HEAD
   abstract search(params: SearchInput): Promise<SearchOutput<TEntity>>
+=======
+  abstract search(
+    params: SearchInput<TSortBy>,
+  ): Promise<ISearchOutput<TEntity, TSortBy>>
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
   abstract search(
     params: SearchInput<TSortBy>,

@@ -1,6 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { SearchInput, SearchOutput } from './Search'
 import { SoftDeletable } from './SoftDeletable'
+=======
+import { ISearchOutput, SearchInput } from './IRespositorySearch'
+import { ISoftDeletable } from './ISoftDeletable'
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
 import { ISearchOutput, SearchInput } from './IRespositorySearch'
 import { ISoftDeletable } from './ISoftDeletable'
@@ -12,7 +17,11 @@ import { SoftDeleteRepository } from './SoftDeleteRepository'
  */
 export abstract class SearchableSoftDeleteRepository<
 <<<<<<< HEAD
+<<<<<<< HEAD
   TEntity extends SoftDeletable,
+=======
+  TEntity extends ISoftDeletable,
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
   TEntity extends ISoftDeletable,
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
@@ -23,7 +32,11 @@ export abstract class SearchableSoftDeleteRepository<
    * ⚠️ Não deve retornar registros com deletedAt != null
    */
 <<<<<<< HEAD
+<<<<<<< HEAD
   abstract search(params: SearchInput): Promise<SearchOutput<TEntity>>
+=======
+  abstract search(params: SearchInput): Promise<ISearchOutput<TEntity>>
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 =======
   abstract search(params: SearchInput): Promise<ISearchOutput<TEntity>>
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d

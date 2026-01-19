@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { NotFoundError } from '../../errors'
 import { UUIDVO } from '../../values-objects'
 import { SearchInput, SearchOutput } from '../Search'
@@ -9,6 +10,8 @@ import { SearchableRepository } from '../SearchableRepository'
  */
 export type ModelProps = {
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 import { ErrorCode, NotFoundError } from '../../errors'
 import { UUIDVO } from '../../values-objects'
 import { ISearchOutput, SearchInput } from '../IRespositorySearch'
@@ -18,11 +21,15 @@ import { RepositorySearchable } from '../RepositorySearchable'
  * Propriedades base de uma entidade de domínio
  */
 export interface ModelProps {
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
   id?: UUIDVO
   createdAt?: Date
   updatedAt?: Date
   deletedAt?: Date | null
+<<<<<<< HEAD
 <<<<<<< HEAD
   [key: string]: any
 }
@@ -85,6 +92,8 @@ export abstract class RepositoryInMemory<
     // entity.updatedAt = new Date()
     const index = this.items.findIndex(item => item.id?.equals(entity.id))
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 }
 
 /**
@@ -145,6 +154,9 @@ export abstract class RepositoryInMemory<
     }
 
     const index = this.items.findIndex(item => item.id?.equals(entity.id!))
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 
     if (index === -1) {
@@ -160,6 +172,7 @@ export abstract class RepositoryInMemory<
    * Soft delete da entidade
    */
 <<<<<<< HEAD
+<<<<<<< HEAD
   async delete(entity: Entity): Promise<void> {
     await this._get(entity.id?.getValue())
     const index = this.items.findIndex(item => item.id === entity.id)
@@ -172,6 +185,8 @@ export abstract class RepositoryInMemory<
     // Agora TypeScript sabe que items[index] existe
     // this.items[index]!.deletedAt = new Date()
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
   async delete(id: string): Promise<void> {
     const index = this.items.findIndex(item => item.id?.getValue() === id)
 
@@ -194,12 +209,16 @@ export abstract class RepositoryInMemory<
       sortDirection: params.sortDirection ?? 'asc',
       filter: params.filter ?? '',
     }
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
   }
 
   /**
    * Busca paginada com filtro e ordenação
    */
+<<<<<<< HEAD
 <<<<<<< HEAD
   async search(params: SearchInput): Promise<SearchOutput<Entity>> {
     const page = params.page ?? 1
@@ -218,6 +237,8 @@ export abstract class RepositoryInMemory<
     )
 
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
   async search(
     params: SearchInput<StringKeyOf<Entity>>,
   ): Promise<ISearchOutput<Entity, StringKeyOf<Entity>>> {
@@ -238,6 +259,9 @@ export abstract class RepositoryInMemory<
     const paginatedItems = this.applyPagination(orderedItems, page, perPage)
 
     // 5️⃣ Retorna objeto consistente com SearchOutput
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     return {
       items: paginatedItems,
@@ -245,6 +269,7 @@ export abstract class RepositoryInMemory<
       totalPages: Math.ceil(filteredItems.length / perPage),
       currentPage: page,
       perPage,
+<<<<<<< HEAD
 <<<<<<< HEAD
       sortBy, // sempre string
       sortDirection,
@@ -254,10 +279,16 @@ export abstract class RepositoryInMemory<
       sortDirection,
       filter,
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
+      sortBy, // ⚠️ ajusta para opcional
+      sortDirection,
+      filter,
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
     }
   }
 
   /**
+<<<<<<< HEAD
 <<<<<<< HEAD
    * Busca entidade por ID ou lança erro
    */
@@ -283,6 +314,8 @@ export abstract class RepositoryInMemory<
   ): Entity[] {
     if (!sortBy || !this.sortableFields.includes(sortBy)) return items
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
    * Retorna apenas entidades ativas
    */
   protected activeItems(): Entity[] {
@@ -320,12 +353,16 @@ export abstract class RepositoryInMemory<
     if (!sortBy || !this.sortableFields.includes(sortBy)) {
       return items
     }
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
 
     return [...items].sort((a, b) => {
       const aValue = a[sortBy]
       const bValue = b[sortBy]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
       if (aValue == null) return 1
       if (bValue == null) return -1
@@ -356,6 +393,8 @@ export abstract class RepositoryInMemory<
     // Retorna uma cópia paginada do array
     return items.slice(start, end)
 =======
+=======
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
       if (aValue === bValue) return 0
 
       const order = aValue! > bValue! ? 1 : -1
@@ -373,6 +412,9 @@ export abstract class RepositoryInMemory<
   ): Entity[] {
     const start = (page - 1) * perPage
     return items.slice(start, start + perPage)
+<<<<<<< HEAD
+>>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
+=======
 >>>>>>> e835efd61086ec81e8ac2c9cf4b966a69c20f94d
   }
 }
